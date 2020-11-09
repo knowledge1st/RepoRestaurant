@@ -1,7 +1,7 @@
 const platosRepository = require('../models/Plato');
 
 exports.getPlatos=(req,res)=>{
-    res.status(200).json(platosRepository.getPlatos());
+    res.status(200).json(platosRepository.plato);
 }
 
 exports.getPlato = (req, res) => {
@@ -13,7 +13,7 @@ exports.getPlato = (req, res) => {
 exports.changePlatoPrice = (req,res) =>{
     const body = req.body;
     const id=body.id;
-    const id=body.new_price;
+    //const id=body.new_price;
     const result = platosRepository.changePlatoPrice(id,new_price);
     if (result){
         res.status(200).json({message:"El plato cambio de categoria correctamente."});
@@ -26,7 +26,7 @@ exports.changePlatoPrice = (req,res) =>{
 exports.changePlatoCategory = (req,res) =>{
     const body = req.body;
     const id=body.id;
-    const id=body.new_cat;
+    //const id=body.new_cat;
     const result = platosRepository.changePlatoCategory(id,new_cat);
     if (result){
         res.status(200).json({message:"El plato cambio de categoria correctamente."});

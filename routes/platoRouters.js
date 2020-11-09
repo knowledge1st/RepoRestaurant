@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', ( req, res, next ) => {
-    res.status(201).json({msg: "Acá llamo al controller de platos"});
-})
+const platosController = require('../controllers/platos.controller')
+
+router.get('/', platosController.getPlatos)
 
 module.exports=router;
