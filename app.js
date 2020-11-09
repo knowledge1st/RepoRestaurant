@@ -8,7 +8,7 @@ const port = process.env.NODE_PORT || 4040;
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 
-const userRoutes = require('./userRouters')
+const userRoutes = require('./routes/userRouters')
 
 app.get('/', (rq,rs) =>{
     rs.send('Hello everyone!');
